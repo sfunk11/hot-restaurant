@@ -1,26 +1,23 @@
-const express = require('express')
-const bodyParser = require('body-parser')
+const express = require('express');
+const bodyParser = require('body-parser');
+const path = require('path');
 
-const app = express()
+const app = express();
  
-app.get('/', function (req, res) {
-  res.send('Hello World')
-})
+require("./app/routing/html-routes")(app);
+require("./app/routing/api-routes")(app);
 
-let PORT = process.env.PORT || 8080
+let PORT = process.env.PORT || 8080;
 
  
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }));
  
 // parse application/json
-app.use(bodyParser.json())
+app.use(bodyParser.json());
  
-app.use(function (req, res) {
-  res.setHeader('Content-Type', 'text/plain')
-  res.write('you posted:\n')
-  res.end(JSON.stringify(req.body, null, 2))
-})
 
-app.listen(PORT)
+
+app.listen(PORT, function(){
 console.log ("App listening on PORT: "+ PORT);
+});

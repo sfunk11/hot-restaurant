@@ -33,7 +33,7 @@
 						<h4 class="panel-title">Current Reservations</h4>
 					</div>
 					<div class="panel-body" id="tableSection">
-					<div class="well" id="tableWell-01"><h2><span class="label label-primary">1</span> | afhaque89</h2></div></div>
+					
 				</div>
 
 				<!-- Waiting List Panel -->
@@ -42,7 +42,7 @@
 						<h4 class="panel-title">Waiting List</h4>
 					</div>
 					<div class="panel-body" id="waitlistSection">
-					<div class="well" id="waitlistWell-01"><h2><span class="label label-primary">1</span> | saimacool</h2></div></div>
+					
 				</div>
 			</div>
 		</div>
@@ -92,14 +92,14 @@
 					// Create the HTML Well (Section) and Add the table content for each reserved table
 					var tableSection = $("<div>");
 					tableSection.addClass('well');
-					tableSection.attr('id', 'tableWell-' + i+1)
+					tableSection.attr('id', 'tableWell-' + i+1);
 					$('#tableSection').append(tableSection);
 
 					var tableNumber = i + 1;
 
 
 					// Then display the remaining fields in the HTML (Section Name, Date, URL)
-					$("#tableWell-"+ i+1).append('<h2><span class="label label-primary">' + tableNumber + "</span> | " + tableData[i].customerID + "</h2>");
+					$("#tableWell-"+ i+1).append('<h2><span class="label label-primary">' + tableNumber + "</span> | " + tableData[i].customerId + "</h2>");
 				}
 			});
 	}
@@ -135,7 +135,7 @@
 					var tableNumber = i + 1;
 
 					// Then display the remaining fields in the HTML (Section Name, Date, URL)
-					$("#waitlistWell-"+ i+1).append('<h2><span class="label label-primary">' + tableNumber + "</span> | " + waitlistData[i].customerID + "</h2>");
+					$("#waitlistWell-"+ i+1).append('<h2><span class="label label-primary">' + tableNumber + "</span> | " + waitlistData[i].customerId + "</h2>");
 				}
 			});
 	}
